@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- HTML Meta Tags -->
+    <title>Susana Moreno Garía</title>
+    <meta name="description" content="Content">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="http://">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://">
+
+    <!-- Reset -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- https://fontawesome.com/v4.7.0/icons/ -->
+
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+    <!-- ++++++++++ HEADER DE PEGA ++++++++++ -->
+    <header>
+        <nav>
+            <a href="#">Servicios</a>
+            <a href="#">
+                <h1>LOGO</h1>
+            </a>
+            <a href="#">Contactar</a>
+        </nav>
+
+    </header>
+
+    <section>
+
+        <!-- ++++++++++ MAPA ++++++++++ -->
+        <article>
+            <!-- localización título -->
+            <div class="icono-titulo">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <h3>Localización</h3>
+            </div>
+
+            <!-- mapa -->
+            <iframe src='https://snazzymaps.com/embed/72946' width='100%' height='400px' style='border:none;'></iframe>
+
+            <!-- datos localización -->
+            <ul class="lista-info">
+                <li>Villafranca de Bonany</li>
+                <li>Calle esta de al lado,34,00897 Mallorca</li>
+            </ul>
+        </article>
+
+        <!-- ++++++++++ TELÉFONOS ++++++++++ -->
+        <article>
+            <ul>
+                <li>
+                    <i class="fa fa-phone"></i>
+                    <span>971 68 86 78</span>
+                </li>
+                <li>
+                    <i class="fa fa-whatsapp"></i>
+                    <span>622 60 16 90</span>
+                </li>
+            </ul>
+        </article>
+
+        <!-- ++++++++++ FORMULARIO ++++++++++ -->
+        <article>
+            <hr>
+
+            <!-- contacto título -->
+            <div class="icono-titulo">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <h3>Email</h3>
+            </div>
+
+            <!-- formulario -->
+            <form action='' method="post" name="contact">
+                <ul>
+                    <li>
+                        <label for="name"></label>
+                        <input type="text" name="name" size="40" maxlength="50" pattern="[a-zA-Z]+{1,30}"
+                            placeholder="nombre">
+                    </li>
+                    <li>
+                        <label for="email"></label>
+                        <input type="email" name="email" autocomplete="on" placeholder="tucorreo@gmail.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                    </li>
+                    <li>
+                        <label for="message"></label>
+                        <textarea name="message" rows="10" placeholder="tu comentario"></textarea>
+                    </li>
+                    <li>
+                        <button type="submit" id="myBtn" onclick="enviar()">Enviar</button>
+                    </li>
+                </ul>
+            </form>
+
+            <!-- correo electrónico -->
+            <ul class="lista-info">
+                <li>info@empresa.com</li>
+                <li>*Tendrá su respuesta en menos de 48h. Gracias por contactar con nosotros</li>
+            </ul>
+        </article>
+
+    </section>
+
+    <!-- ++++++++++ FOOTER ++++++++++ -->
+    <footer>
+        <ul>
+            <li>
+                <a href="#">Servicios</a>
+            </li>
+            <li>
+                <a href="#">Contactar</a>
+            </li>
+        </ul>
+        <hr>
+        <h5>Copyright 2020 - Nombre de la empresa</h5>
+    </footer>
+
+</body>
+<script>
+    //evento onClick
+    function enviar() {
+        //variables name y textArea
+        nameForm = document.contact.name.value;
+        textArea = document.contact.message.value;
+        mail = document.contact.email.value;
+        //si los campos están vacíos
+        if (nameForm === '' || textArea === '' || mail === '') {
+            alert("rellene todos los campos del formulario");
+        } else {
+            //Abre un nuevo documento, y te dice que el formulário fué enviado
+            document.open();
+            document.write("<h1>Tu petición se ha enviado con éxito</h1>");
+            document.close();
+        }
+    }
+</script>
+
+</html>
